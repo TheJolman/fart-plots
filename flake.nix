@@ -15,11 +15,11 @@
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
       in {
+        # TODO: add pre-commit and default package here
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
             go
             go-tools
-            cobra-cli
           ];
 
           shellHook = ''
